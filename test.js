@@ -68,16 +68,17 @@ function binarySearch(array, target) {
     var low = 0;
     var high = array.length - 1;
     while (low <= high) {
-        var mid = Math.floor((low + high) / 2);
-        if (array[mid] === target) {
-            return mid;
+        var middle = Math.floor((low + high) / 2);
+        if (array[middle] === target) {
+            return middle;
         }
-        else if (array[mid] < target) {
-            low = mid + 1;
+        else if (array[middle] < target) {
+            low = middle + 1;
         }
         else {
-            high = mid - 1;
+            high = middle - 1;
         }
     }
     return -1;
 }
+console.log(binarySearch([1, 4, 5, 7, 11, 0, 54, 87, 133, 77, 89, 65, 278, 89], 4));

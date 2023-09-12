@@ -71,15 +71,20 @@ function binarySearch(array: number[], target: number): number {
   let high = array.length - 1;
 
   while (low <= high) {
-    let mid = Math.floor((low + high) / 2);
-    if (array[mid] === target) {
-      return mid;
-    } else if (array[mid] < target) {
-      low = mid + 1;
+    let middle = Math.floor((low + high) / 2);
+    if (array[middle] === target) {
+      return middle;
+    } else if (array[middle] < target) {
+      low = middle + 1;
     } else {
-      high = mid - 1;
+      high = middle - 1;
     }
   }
   return -1;
 }
 
+console.log(binarySearch([1,4,5,7,11,0,54,87,133,77,89,65,278,89], 4));
+/**
+ * I noticed that when there are multiple items of the same value in an array at different index positions
+ * the binary search algorithm returned the index of the first occurrence of the target value.
+ */
