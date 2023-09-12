@@ -52,11 +52,11 @@ function convertTemperature(temp, unit) {
 function linearSearch(array, target) {
     for (var i = 0; i < array.length; i++) {
         if (array[i] === target) {
-            return i;
+            return true;
         }
         console.log(" ".concat(target, " not found at ").concat(i));
     }
-    return -1;
+    return false;
 }
 console.log(linearSearch(["Apple", "Pawpaw", "Mango", "Avocado"], "Orange"));
 // This returns the index [numerical position] of the item
@@ -82,3 +82,7 @@ function binarySearch(array, target) {
     return -1;
 }
 console.log(binarySearch([1, 4, 5, 7, 11, 0, 54, 87, 133, 77, 89, 65, 278, 89], 4));
+/**
+ * I noticed that when there are multiple items of the same value in an array at different index positions
+ * the binary search algorithm returned the index of the first occurrence of the target value.
+ */ 

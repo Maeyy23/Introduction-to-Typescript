@@ -50,13 +50,13 @@ function convertTemperature(temp: number, unit: string): number {
 
 /* Linear Search algorithm is a search method that iterates over the items in an array until the targetted item is found or not found. 
 */
-function linearSearch(array: string[], target: string): number {
+function linearSearch(array: string[], target: string): boolean {
   for (let i = 0; i < array.length; i++) {
     if (array[i] === target) {
-      return i;
+      return true;
     }console.log(` ${target} not found at ${i}`)
   }
-  return -1;
+  return false;
 }
 
 console.log(linearSearch(["Apple", "Pawpaw", "Mango", "Avocado"], "Orange"))
